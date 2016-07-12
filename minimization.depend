@@ -1,0 +1,41 @@
+# depslib dependency file v1.0
+1229463530 source:c:\workspace\g++\minimization\matrix.cpp
+	"matrix.h"
+	<iostream>
+	<cmath>
+
+1229463528 c:\workspace\g++\minimization\matrix.h
+
+1229268888 source:c:\workspace\g++\minimization\functionals.c
+	<stdio.h>
+	<math.h>
+	"functionals.h"
+
+1229267558 c:\workspace\g++\minimization\functionals.h
+
+1229891739 source:c:\workspace\g++\minimization\main.cpp
+	<iostream>
+	<cmath>
+	"matrix.h"
+	"functionals.h"
+
+1229463530 source:d:\develop\g++\minimization0.9\matrix.cpp
+	"matrix.h"
+	<iostream>
+	<cmath>
+
+1229463528 d:\develop\g++\minimization0.9\matrix.h
+
+1229268888 source:d:\develop\g++\minimization0.9\functionals.c
+	<stdio.h>
+	<math.h>
+	"functionals.h"
+
+1229267558 d:\develop\g++\minimization0.9\functionals.h
+
+1230102194 source:d:\develop\g++\minimization0.9\main.cpp
+	<iostream>
+	<cmath>
+	"matrix.h"
+	"functionals.h"
+

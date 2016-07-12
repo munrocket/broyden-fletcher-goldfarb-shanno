@@ -1,0 +1,1 @@
+optimization1.exe >> points.dat
