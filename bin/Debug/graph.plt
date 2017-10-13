@@ -20,7 +20,7 @@ set output "penalty.eps"
 unset table
 unset key
 plot 	"penalty_iso.dat" using 1:2 with line linetype 0, \
-	"points1.dat" u 1:2 w linespoints lt 1 pointtype
+	"points.dat" u 1:2 w linespoints lt 1 pointtype
 
 #plot in eps
 set term window
