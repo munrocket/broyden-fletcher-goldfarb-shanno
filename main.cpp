@@ -63,16 +63,16 @@ inline double f_x_kk(double s)
 void s_unimodal(double& s_min, double& s_max)
 {
     extern vector x_k;
-    extern matrix D;
+    double step = UNIM_STEP / norm(grad_f(x_k))
     double s0 = 0;
-    double s1 = UNIM_STEP / norm(grad_f(x_k));
-    double s2 = 2 * UNIM_STEP / norm(grad_f(x_k));
-    int n = 0;
-    while (f_x_kk(s1) > f_x_kk(s2) && ++n < 1e4)
-    {
-        s0 = s1;
-        s1 = s2;
-        s2 += UNIM_STEP;
+    double s1 = step;
+    double s2 = 2 * step;
+    if (f_x_kk(s0) > f_x_kk(s1)) {
+        for(int i = 0; f_x_kk(s1) > f_x_kk(s2) && i < 1000; i++) {
+            s0 = s1;
+            s1 = s2;
+            s2 *= 2;
+        }
     }
     s_min = s0;
     s_max = s2;
