@@ -11,7 +11,7 @@ void errormessage(char* from, char* errormessage)
   exit(666);
 };
 
-/////////////////////////////////// matrix /////////////////////////////////////
+/////////////////////////////////// matrices /////////////////////////////////////
 
 matrix::matrix()
 {
@@ -144,7 +144,6 @@ matrix& matrix::operator*=(const matrix& a)
 {
   if (colomns != a.lines)
     errormessage("matrix::operator*=", "different size");
-  //temp := this * a
   matrix temp(lines, a.colomns);
   for(int i = 0; i < temp.lines; i++)
     for(int j = 0; j < temp.colomns; j++)
@@ -363,7 +362,7 @@ vector operator/(const vector& v, const matrix& m)
   return tv;
 }
 
-/////////////////////////////////// covectors //////////////////////////////////
+/////////////////////////////////// covectors (transposed vectors) //////////////////////////////////
 
 covector::covector(int length):
   matrix(1, length)

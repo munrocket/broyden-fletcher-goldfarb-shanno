@@ -1,8 +1,7 @@
 # Broyden-Fletcher-Goldfarb-Shanno
-This is implimentation of Quasi-Newton optimization method with BFGS formula in C++.
+This is implimentation of Quasi-Newton optimization method with BFGS algorithm in C/C++.
 * One-dimensional search uses the golden-section search which is suitable for unimodal functions.
-* To solve limited optimization problems, a penalty method is used.
-* For simplicity and clarity, operator overloading implemented in the matrices class
-* The formula used can be seen in picture below, also covector class it is transposed vector
+* For solving constrained optimization problems, a penalty method is used.
+* For simplicity and clarity, operator overloading implemented in the matrices class with C++.
 
-![](https://github.com/munrocket/Broyden-Fletcher-Goldfarb-Shanno/blob/master/bin/Debug/example.png)
+![](https://github.com/munrocket/Broyden-Fletcher-Goldfarb-Shanno/blob/master/charts/himmelblau.png)

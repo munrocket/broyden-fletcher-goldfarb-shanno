@@ -4,29 +4,32 @@
 
 #define DIFF_STEP 1e-6
 
+//numerical differantiation 
 double differential(double_in_double f, double x)
 {
     double h = DIFF_STEP;
-    return (f(x - 2*h) - 8*f(x - h) + 8*f(x + h) - f(x + 2*h)) / 12 / h;    //4-й порядок точности
-    //return (f(x + h) - f(x - h)) / 2 / h;                                   //2-й порядок точности
+    return (f(x - 2*h) - 8*f(x - h) + 8*f(x + h) - f(x + 2*h)) / 12 / h;    //O(h^4) approximation
+    //return (f(x + h) - f(x - h)) / 2 / h;                                   //O(h^2) approximation
 }
 
+//numerical integration with O(h^4)
 double simpson(double_in_double f, double left, double right, int k)
 {
     int i;
     double h = (right - left) / k;
-    double Sf = f(left) + f(right);     //Sf = f(x1) + 4*f(x2) + 2*f(x3) + ... + 4*f(x<2k-1>) + f(x<2k>)
+    double Sf = f(left) + f(right); 
     for(i = 1; i < 2*k; i++)
         Sf += (i % 2 + 1) * 2 * f(i * h / 2);
     return Sf * h / 6;
 }
 
+//golden section search
 double golden_section(double_in_double q, double left, double right, double epsilon)
 {
-	double a, b;		        //золотые сечения left < a < b < right
-	double qa, qb;	            //значение функции q(a) q(b)
-	double psi;			        //psi=1/phi, где phi золотая пропорция
-	double x;			        //точка минимума
+	double a, b;		        //left < a < b < right
+	double qa, qb;
+	double psi;			        //psi = 1 / phi
+	double x;			        
 	int i;
 	psi = 2/(1 + sqrt(5));
 	b = left + psi * (right - left);
